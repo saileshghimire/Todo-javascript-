@@ -67,3 +67,5 @@ app.put("/completed", async function(req,res){
 app.delete("/todo/:id", function(req,res){
     // 
 });
+
+app.listen(3000);
