@@ -1,6 +1,7 @@
 const express  = require("express");
 const app = express();
 const { createTodo, updateTodo } = require("./types")
+const { Todos} = require("./database");
 
 app.use(express.json());
 
@@ -19,6 +20,13 @@ app.post("/todo", async function(req,res){
             });
             return;
         }
+        const newTodo = await Todos.create({
+            title: createPayload.title,
+            description: createPayload.description
+        })
+        return res.json({
+            msg:'courses created successfully',todo: createPayload
+        });
     } catch(error){
         res.json({
             error:error
