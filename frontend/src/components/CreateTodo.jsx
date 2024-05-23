@@ -1,5 +1,5 @@
 
-function CreateTodo(){
+export function CreateTodo(){
     return <div>
         <input type="text" placeholder="title" /> 
         <br />
