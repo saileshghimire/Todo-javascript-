@@ -29,7 +29,8 @@ app.post("/todo", async function(req,res){
             completed: false
         });
         return res.json({
-            msg:"courses created successfully"
+            msg:"courses created successfully",
+            todo: newTodo
         });
     } catch(error){
         res.json({
