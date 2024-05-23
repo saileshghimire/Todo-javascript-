@@ -1,9 +1,11 @@
 const express  = require("express");
 const app = express();
+const cors = require("cors");
 const { createTodo, updateTodo } = require("./types")
 const { Todos} = require("./database");
 
 app.use(express.json());
+app.use(cors());
 
 
 app.get("/todos", async function(req,res){
